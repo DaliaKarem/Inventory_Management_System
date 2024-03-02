@@ -18,8 +18,7 @@ public class main {
                     String name = scanner.nextLine();
                     System.out.println("Enter Item Quantity: ");
                     int quantity = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline character
-                    
+                    scanner.nextLine(); 
                     System.out.println("Do you want to enter Item Report? (Y / N) ");
                     String input = scanner.nextLine();
                     String report = input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes") ? "" : null;
@@ -35,7 +34,14 @@ public class main {
                 case 2:
                     inventory.ShowItems();
                     break;
-                    
+                case 3:
+                    System.out.println("Enter Item Name: ");
+                    String item=scanner.nextLine();
+                    inventory.DeleteItem(item);    
+                    break;
+                case 4:
+                  inventory.EditItem();    
+                  break;
                 case 5:
                     System.out.println("Exiting the program...");
                     return; // Exit the program
